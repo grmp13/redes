@@ -1,0 +1,141 @@
+[
+    {
+        "id": "bdd753a46ab648dc",
+        "type": "aedes broker",
+        "z": "d62fb708330670d7",
+        "name": "brokerCO2",
+        "mqtt_port": "1883",
+        "mqtt_ws_bind": "port",
+        "mqtt_ws_port": "",
+        "mqtt_ws_path": "",
+        "cert": "",
+        "key": "",
+        "certname": "",
+        "keyname": "",
+        "persistence_bind": "memory",
+        "dburl": "",
+        "usetls": false,
+        "x": 180,
+        "y": 540,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "af14a1542548b181",
+        "type": "mqtt in",
+        "z": "d62fb708330670d7",
+        "name": "",
+        "topic": "botao/topico",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "c7518d064f47e268",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 700,
+        "wires": [
+            [
+                "b715a17618c1bf99"
+            ]
+        ]
+    },
+    {
+        "id": "b715a17618c1bf99",
+        "type": "debug",
+        "z": "d62fb708330670d7",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "064c2cd45f8aec77",
+        "type": "mqtt out",
+        "z": "d62fb708330670d7",
+        "name": "",
+        "topic": "botao/topico",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "c7518d064f47e268",
+        "x": 570,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "0c380cf86f6282f3",
+        "type": "inject",
+        "z": "d62fb708330670d7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 190,
+        "y": 620,
+        "wires": [
+            [
+                "064c2cd45f8aec77"
+            ]
+        ]
+    },
+    {
+        "id": "c7518d064f47e268",
+        "type": "mqtt-broker",
+        "name": "mqttinCO2",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
